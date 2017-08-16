@@ -66,6 +66,31 @@
 \pagenumbering{arabic}
 
 \section{Introduction}
+\section{General Description and Target Group}
+\section{PlayStore Description}
+\section{Target Course Grade}
+\section{Aspects on Security and Ethics}
+\section{User Guide - How To}
+\section{Application Architecture}
+\section{Selected Discussion Topics}
+\subsection{Embedding Fragments statically/dynamically in Activity}
+Trying to use the provided templates for google material designed activities and
+fragments, I run into the situation where fragments where by default embedded into
+activities by instantiating them in XML. This works fine when the Activity/Fragment
+combo in question does not need to obtain extras on creation. In many cases however,
+for example when the Activity/Fragment combo represents the detail view after a
+list activity, the ID of the chosen list item has to be obtained. Hence, the given
+template code had to be modified for dynamic instantiation of the fragment from
+within the activity.
+During planning for the above modification, it was noted that there are at least
+three single activity / single fragment views in the current application. According
+to the example in the course book, this could make up for an `Abstract'
+`SingleFragmentActivity' class. However, it was decided against this due to
+implications on the material design elements: The Appbar and Floating Action Button
+are kept in the activity, while the content layout is in the fragment. But the
+three single fragment activities don't share exactly the same setup for appbar
+and Floating Action Buttons. Hence another layer of abstraction would be needed that
+would make things overly verbose.  
 
 
 \addcontentsline{toc}{section}{\refname}
