@@ -92,7 +92,26 @@ three single fragment activities don't share exactly the same setup for appbar
 and Floating Action Buttons. Hence another layer of abstraction would be needed that
 would make things overly verbose.
 
+\subsection{Deciding on the Persistance Model} It was from the beginning decided
+to store the data in SQLite. It was needed to decide how to store data from the
+UI on for example orientation changes. Currently, in the IngredientChooser, when
+an ingredient is not selected, the value will not persist when the device
+changes orientation. To come to a somehow fluent user experience, it was decided
+to connect the checkbox for selected with the textchange listener of the entry
+boxes. Hence, when text is entered, the selected textbox is activated. In the
+same sense, to improve the user experience, unselecting the checkbox will
+automatically also empty the entry fields. As such, it is no longer possible to
+have entered text without selection active. Hence, on orientation change, all
+data will be stored in the DB and read back on resume.
 
+\subsection{Deciding on Ingredient Chooser UI}
+Showing zero's or not. Showing a search bar. Sorting alphabetically.
+
+\subsection{In InigredientChooser, correct initial focus}
+On ActivityStartup, always the first field get's focus before data is loaded.
+The onFocus method then determines that there is no data, hence it writes/overwrites
+directly a zero to the database. The solution was to add a dummy focus on the
+title element in the XML file.
 
 
 \addcontentsline{toc}{section}{\refname}
