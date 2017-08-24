@@ -92,17 +92,7 @@ three single fragment activities don't share exactly the same setup for appbar
 and Floating Action Buttons. Hence another layer of abstraction would be needed that
 would make things overly verbose.
 
-\subsection{The up navigation to a parent with tablayout}
-The base acivity extends AppCompatActivity and has a tab layout to switch between
-Meal and Product list page. When a list element is selected, a new Activity starts.
-Now, when the user navigates up from the started activity, he should end up in the
-tab where he left. First it was considered to use IntentWithResult and onActivityResult.
-However, it turned out that this was not possible in the usual way as for some strange
-reason (probably because this MealPricerTabActivity is a FragmentActivity) onActivityResult
-could not be overridden as it did not exist uppstream. Hence, the problem was solved
-by overriding `getSupportParentActivityIntent()' and add an extra that would describe
-from which Activity the return comes. This could then be evaluated in the `onCreate'
-method of the parent `MealPricerTabActivity'. 
+
 
 
 \addcontentsline{toc}{section}{\refname}
