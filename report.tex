@@ -164,6 +164,15 @@ the pink colored `add'  button in the lower right corner to start entering a new
 product. First you enter the name in the upcoming dialog. You can later stil
 modify the name.
 
+
+\begin{figure}
+
+  \centering
+    \includegraphics[width=0.7\textwidth]{images/screenshots.png}
+    \caption{A picture of a gull.}
+    \label{fig:screenshots}
+\end{figure}
+
 After pressing `OK' you enter the `Product Edit' screen where
 you enter the requested info about amount and price. On pressing the button with
 the camera icon, you can take a photo of your product. All prices are calculated
@@ -199,7 +208,7 @@ end of each meal list entry.
 \subsection{General Structure and Flow}
 After the idea of Mealpricer was born, it was decided how many views
 would be needed and in which sequence it would make sense to arrange them. An
-early design draft is shown in figure x. There it can already be seen that the
+early design draft is shown in figure \ref{fig:design_draft}. There it can already be seen that the
 main application models would be meals, products and ingredients. The base view
 of the application was chosen to consist of two pages that are connected as
 tabs. Technically, this was implemented using an activity that hosts two framgents
@@ -207,6 +216,15 @@ using a pager adapter. The fragments themselves both host a recycler list view
 for each the meals and the products. Both these recycler view implement list
 item touch navigation: On touching a list item, the user is brought to the next
 activity, either the MealDetail activity or the ProductDetail activity.
+
+\begin{figure}
+
+  \centering
+    \includegraphics[width=\textwidth]{images/design_draft.jpg}
+    \caption{A picture of a gull.}
+    \label{fig:design_draft}
+\end{figure}
+
 
 If the user wants to add new list elements, in both the meal and product list an
 alert dialog is shown that allows the user to chose a name for the new meal or
@@ -319,6 +337,6 @@ listeners are attached during instantiation, but are deactivated during onBind.
 
 
 \addcontentsline{toc}{section}{\refname}
-\bibliography{references}
+%\bibliography{references}
 
 \end{document}
